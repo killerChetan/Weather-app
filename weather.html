@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+  <header>
+    <h1>Weather App</h1>
+  </header>
+  <main>
+    <section class="search">
+      <input type="search" id="locationInput" placeholder="Enter a city">
+      <button id="searchButton">Search</button>
+    </section>
+    <!-- loding animation -->
+    <div id="loading" style="display: none;">
+      <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
+        <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+        <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+        <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+        <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+      </svg>
+    </div>
+
+    <div id="error"></div>
+    <section class="Weather">
+      <h2 id="location"></h2>
+      <span id="emoji"></span>
+      <div class="weather-info">
+        <p id="temp"></p>
+        <p id="windSpeed"></p>
+        <p id="humidity"></p>
+        <p id="description"></p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <span>
+      © 2024 Weather App
+    </span>
+  </footer>
+  <script src="weather.js"></script>
+</body>
+</html>
