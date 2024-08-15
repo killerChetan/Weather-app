@@ -6,6 +6,13 @@ const searchBtn = document.querySelector("#searchButton");
 const loading = document.querySelector("#loading");
 let error1 = document.querySelector("#error");
 
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
+
+
 //async function
 async function checkWeather(city) {
   loading.style.display = "block";
