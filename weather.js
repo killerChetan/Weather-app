@@ -16,7 +16,6 @@ async function checkWeather(city) {
       throw new Error('City not found');
     }
     const data = await response.json();
-    console.log(data);
 
     const location = document.querySelector("#location");
     const temp = document.querySelector("#temp");
@@ -55,7 +54,6 @@ async function checkWeather(city) {
 }
 
 searchBtn.addEventListener("click", (e) => {
-  console.log(e)
   checkWeather(searchBox.value.trim());
   document.querySelector(".Weather").style.display = "block";
   document.querySelector(".Weather").style.height = ""
