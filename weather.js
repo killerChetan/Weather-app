@@ -40,6 +40,8 @@ async function checkWeather(city) {
       emoji.innerHTML = "🌧️";
     } else if (data.weather[0].main == "Thunderstorm") {
       emoji.innerHTML = "️⛈️";
+    } else if (data.weather[0].main == "Haze") {
+      emoji.innerHTML = "️🌫️";
     } else {}
   } catch (error) {
     error1.innerHTML = `<h4>${error.message}</h4>`;
@@ -53,10 +55,21 @@ async function checkWeather(city) {
   }
 }
 
+
 searchBtn.addEventListener("click", (e) => {
   checkWeather(searchBox.value.trim());
   document.querySelector(".Weather").style.display = "block";
   document.querySelector(".Weather").style.height = ""
   document.querySelector(".Weather").style.overflow = "visible";
   error1.innerHTML = ""
+});
+
+
+searchBox.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    checkWeather(searchBox.value.trim());
+    event.preventDefault();
+    searchBtn.click();
+    
+  }
 });
